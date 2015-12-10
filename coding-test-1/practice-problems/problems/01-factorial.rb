@@ -6,6 +6,17 @@
 # Difficulty: easy.
 
 def factorial(n)
+  #Assumes non-negative integer input
+  
+  n_factorial = 1
+  
+  while n>1
+    n_factorial *= n
+    n -= 1
+  end
+  
+  return n_factorial
+  
 end
 
 # These are tests to check that your code is working. After writing

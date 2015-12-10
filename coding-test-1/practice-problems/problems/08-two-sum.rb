@@ -5,6 +5,18 @@
 # Difficulty: medium.
 
 def two_sum(nums)
+  i=0
+  while i<nums.length
+    j=i+1
+    while j<nums.length
+      if nums[i]+nums[j]==0
+        # Found a pair that sum to 0
+        return [i,j]
+      end
+      j+=1
+    end
+    i+=1
+  end
 end
 
 # These are tests to check that your code is working. After writing

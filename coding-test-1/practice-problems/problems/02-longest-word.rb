@@ -7,6 +7,23 @@
 # Difficulty: easy.
 
 def longest_word(sentence)
+  words = sentence.split
+  num_words = words.length
+  longest_idx = -1  #index of longest word so far
+  longest_lgth = -1   #length of longest word so far
+  
+  # Loop through the words in the sentence.
+  word_idx = 0
+  while word_idx < num_words
+    if words[word_idx].length > longest_lgth
+      longest_lgth = words[word_idx].length
+      longest_idx = word_idx
+    end
+    word_idx += 1
+  end
+  
+  return words[longest_idx]
+    
 end
 
 # These are tests to check that your code is working. After writing

@@ -5,6 +5,34 @@
 # Difficulty: medium.
 
 def most_common_letter(string)
+#  str = string
+#  mostCommonLetter = ""
+#  mostCommonFreq = 0
+  mostCommon = ["",0]
+  
+  i=0
+  while i<string.length
+    # For each letter, go through rest of string counting occurences of the letter. 
+    j=i+1
+    freq=1
+    while j<string.length
+      if string[i]==string[j] 
+        freq += 1
+      end
+      j+=1
+    end
+    
+    if freq>mostCommon[1]
+      mostCommon[0] = string[i]
+      mostCommon[1] = freq
+    end
+        
+    i += 1
+  end
+  
+  return mostCommon
+#  return [mostCommonLetter, mostCommonFreq]
+  
 end
 
 # These are tests to check that your code is working. After writing

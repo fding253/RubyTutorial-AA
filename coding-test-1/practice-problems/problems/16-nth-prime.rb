@@ -23,6 +23,20 @@ def is_prime?(number)
 end
 
 def nth_prime(n)
+  prev_i=2
+  i=3
+  count=1 # Count 2 as special case, loop through odd numbers
+  
+  while count<n
+    prev_i = i
+    if is_prime?(i)
+      count+=1
+    end
+    i+=2
+  end
+  
+  return prev_i 
+    
 end
 
 # These are tests to check that your code is working. After writing

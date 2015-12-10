@@ -6,6 +6,20 @@
 # Difficulty: easy.
 
 def palindrome?(string)
+    front = 0
+    back = string.length-1
+    
+    while back > front
+        if string[back]!=string[front]
+            return false
+        end
+        
+        front += 1
+        back -= 1
+    end
+    
+    return true
+            
 end
 
 # These are tests to check that your code is working. After writing

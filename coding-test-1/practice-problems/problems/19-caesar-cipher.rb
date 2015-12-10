@@ -24,6 +24,28 @@
 # information, we would not give it to you on the timed challenge. :-)
 
 def caesar_cipher(offset, string)
+  # Assuming: string contains only lowercase, alpha characters (for non lower-case alphabet chars, just copy over)
+  
+  result = ""
+  
+  i=0
+  while i<string.length
+    char_ascii = string[i].ord
+    
+    #Check whether lowercase alphabet:
+    if char_ascii>="a".ord && char_ascii<="z".ord
+      shift = ((char_ascii+offset)%("a".ord))%26 + "a".ord
+      char_shf = shift.chr
+      result += char_shf
+    else
+      result += string[i]
+    end
+    
+    i+=1
+  end
+  
+  return result
+  
 end
 
 # These are tests to check that your code is working. After writing
@@ -37,3 +59,4 @@ puts(
   'caesar_cipher(3, "abc xyz") == "def abc": ' +
   (caesar_cipher(3, 'abc xyz') == 'def abc').to_s
 )
+

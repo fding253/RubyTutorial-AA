@@ -8,6 +8,37 @@
 # Difficulty: medium.
 
 def dasherize_number(num)
+  strNum = num.to_s
+  result = ""
+  
+  i=0
+  while i<strNum.length
+    if strNum[i].to_i%2 == 0
+      # Even: just copy digit over
+      result += strNum[i]
+    else
+      # Odd: add dashes
+      if i==0 #First digit
+        result += strNum[i]+"-"
+      elsif i==strNum.length-1 #Last digit
+        if result[result.length-1]=="-"
+          result += strNum[i]
+        else
+          result += "-" + strNum[i]
+        end
+      else # middle
+        if result[result.length-1]=="-" #If prev was also odd, don't need to add dash before
+          result += strNum[i] + "-"
+        else
+          result += "-" + strNum[i] + "-" 
+        end
+      end
+    end
+    i+=1
+  end
+  
+  return result
+  
 end
 
 # These are tests to check that your code is working. After writing

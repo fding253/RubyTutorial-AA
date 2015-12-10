@@ -5,6 +5,20 @@
 # Difficulty: medium.
 
 def nearby_az(string)
+    i=0
+    while i<string.length
+        if string[i]=="a"
+            if string[i+1]=="z" || string[i+2]=="z" || string[i+3]=="z"
+                return true
+            else
+                return false
+            end
+        end
+        i += 1
+    end
+    
+    #reached end of string without returning => no "a" in string => return false
+    return false
 end
 
 # These are tests to check that your code is working. After writing

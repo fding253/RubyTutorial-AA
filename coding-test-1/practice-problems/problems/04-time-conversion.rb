@@ -4,6 +4,19 @@
 # Difficulty: easy.
 
 def time_conversion(minutes)
+    hours = minutes/60
+    minutes = minutes % 60
+    
+    # Method 1: if minutes has one digit, add a 0
+    if minutes < 10
+        return hours.to_s + ":0" + minutes.to_s
+    else
+        return hours.to_s + ":" + minutes.to_s
+    end
+    
+    # Method 2: use rjust() (rjust not defined)
+    # return hours.to_s + ":" + minutes.rjust(2,"0")
+    
 end
 
 # These are tests to check that your code is working. After writing

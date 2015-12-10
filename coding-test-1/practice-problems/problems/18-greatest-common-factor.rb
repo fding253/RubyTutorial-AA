@@ -5,6 +5,24 @@
 # Difficulty: medium.
 
 def greatest_common_factor(number1, number2)
+  greatest_so_far = 1
+  
+  if number1<number2
+    min = number1
+  else 
+    min = number2
+  end
+  
+  i=1
+  while i <= min
+    if (number1%i == 0) && (number2%i == 0)
+      greatest_so_far = i
+    end
+    i+=1
+  end
+  
+  return greatest_so_far
+  
 end
 
 # These are tests to check that your code is working. After writing
